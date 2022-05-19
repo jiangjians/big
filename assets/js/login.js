@@ -35,7 +35,7 @@ $(function() {
     e.preventDefault();
     $.ajax({
       type: "POST",
-      url: baseUrl + "/api/reguser",
+      url:"/api/reguser",
       data: {
         username: $("#form_reg [name=username").val(),
         password: $("#form_reg [name=password").val(),
@@ -53,7 +53,7 @@ $(function() {
     e.preventDefault();
     $.ajax({
       type: "POST",
-      url: baseUrl + "/api/login",
+      url:"/api/login",
       data: $("#form_login").serialize(),
       success: (res) => {
         if (res.status !== 0) return layer.msg(res.message);
@@ -61,7 +61,7 @@ $(function() {
         // 将登录成功得到的 token 字符串，保存到 localStorage 中
         localStorage.setItem("token", res.token);
         // 跳转到主页
-        location.href = "/index.html";
+        // location.href = "/index.html";
       },
     });
   });
