@@ -12,7 +12,7 @@ function getUserInfo() {
       Authorization: localStorage.getItem("token"),
     },
     success: (res) => {
-      console.log(res)
+      // console.log(res)
       if (res.status !== 0) return layer.msg("数据请求失败！");
       layer.msg("数据请求成功！");
       renderAvatar(res.data)

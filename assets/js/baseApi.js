@@ -7,9 +7,9 @@ $.ajaxPrefilter((option) => {
   // console.log(option.url);
   // 在发起真正的 Ajax 请求之前，统一为有权限的接口，设置 headers 请求头
   if (option.url.includes('/my/')) {
-    option.header = {
+    option.headers = {
       Authorization: localStorage.getItem("token"),
-    }
+    };
   }
   //不论成功还是失败，最终都会调用 complete 回调函数
   option.complete = (res) => {
