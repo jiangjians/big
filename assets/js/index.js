@@ -58,3 +58,6 @@ $("#btnLogout").click(() => {
     }
   );
 });
+function change() {
+  $('#webkit').addClass('layui-this').siblings().removeClass('layui-this')
+}
